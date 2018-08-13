@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
@@ -35,11 +34,11 @@ import java.util.Date;
 
 // 表示在序列化Person时，将值为null的字段排除掉。
 //@JsonInclude(JsonInclude.Include.NON_EMPTY)
-@JsonRootName("UserDTO")
+//@JsonRootName("UserDTO")
 
 //作用在类上，被用来指明当序列化时需要对属性做排序，它有2个属性
 //一个是alphabetic：布尔类型，表示是否采用字母拼音顺序排序，默认是为false，即不排序
-@JsonPropertyOrder(alphabetic = true,value = {"date","age"})
+@JsonPropertyOrder(alphabetic = true, value = {"date", "age"})
 public class UserDTO {
 
     @JsonIgnore
