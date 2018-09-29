@@ -1,7 +1,7 @@
 package cn.hy.springbootjackson.pojo;
 
-import cn.hy.springbootjackson.view.ResultDetailView;
-import cn.hy.springbootjackson.view.ResultSimpleView;
+import cn.hy.springbootjackson.view.UserVODetailView;
+import cn.hy.springbootjackson.view.UserVOSimpleView;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 
@@ -19,10 +19,10 @@ import lombok.Data;
 @Data
 public class UserVO {
 
-    @JsonView({ResultSimpleView.class, ResultDetailView.class})
+    @JsonView({UserVOSimpleView.class, UserVODetailView.class})
     private String field1 = "11";
 
-    @JsonView(ResultDetailView.class)
+    @JsonView(UserVODetailView.class)
     private String field2 = "22";
 
 

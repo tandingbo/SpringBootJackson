@@ -1,6 +1,6 @@
 package cn.hy.springbootjackson.pojo;
 
-import cn.hy.springbootjackson.view.ResultSimpleView;
+import cn.hy.springbootjackson.view.UserVOSimpleView;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -33,13 +33,13 @@ public class ResultBean<T> implements Serializable {
     @JsonIgnore
     private static final int FAIL = 1;
 
-    @JsonView(ResultSimpleView.class)
+    @JsonView(UserVOSimpleView.class)
     private String message = "success";
 
-    @JsonView(ResultSimpleView.class)
+    @JsonView(UserVOSimpleView.class)
     private int status = SUCCESS;
 
-    @JsonView(ResultSimpleView.class)
+    @JsonView(UserVOSimpleView.class)
     private T data;
 
     public ResultBean() {

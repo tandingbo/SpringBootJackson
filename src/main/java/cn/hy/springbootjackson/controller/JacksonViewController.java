@@ -2,8 +2,8 @@ package cn.hy.springbootjackson.controller;
 
 import cn.hy.springbootjackson.pojo.ResultBean;
 import cn.hy.springbootjackson.pojo.UserVO;
-import cn.hy.springbootjackson.view.ResultDetailView;
-import cn.hy.springbootjackson.view.ResultSimpleView;
+import cn.hy.springbootjackson.view.UserVODetailView;
+import cn.hy.springbootjackson.view.UserVOSimpleView;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,13 +26,13 @@ public class JacksonViewController {
 
 
     @GetMapping("simple")
-    @JsonView(ResultSimpleView.class)
+    @JsonView(UserVOSimpleView.class)
     public ResultBean<UserVO> getUserSimpleVO() {
         return createUserVO();
     }
 
     @GetMapping("detail")
-    @JsonView(ResultDetailView.class)
+    @JsonView(UserVODetailView.class)
     public ResultBean<UserVO> getUserDetailVO() {
         return createUserVO();
     }
