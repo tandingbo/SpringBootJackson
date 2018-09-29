@@ -1,5 +1,6 @@
 package cn.hy.springbootjackson.pojo;
 
+import cn.hy.springbootjackson.view.ResultSimpleView;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,15 +21,8 @@ import java.io.Serializable;
  */
 
 
-
 @Data
 public class ResultBean<T> implements Serializable {
-
-    public interface ResultSimpleView {
-    }
-
-    public interface ResultDetailView extends ResultSimpleView {
-    }
 
     @JsonIgnore
     private static final ObjectMapper MAPPER = new ObjectMapper();

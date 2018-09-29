@@ -1,5 +1,7 @@
 package cn.hy.springbootjackson.pojo;
 
+import cn.hy.springbootjackson.view.ResultDetailView;
+import cn.hy.springbootjackson.view.ResultSimpleView;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 
@@ -17,10 +19,11 @@ import lombok.Data;
 @Data
 public class UserVO {
 
-    @JsonView(ResultBean.ResultSimpleView.class)
-    private String field1;
+    @JsonView({ResultSimpleView.class, ResultDetailView.class})
+    private String field1 = "11";
 
-    private String field2;
+    @JsonView(ResultDetailView.class)
+    private String field2 = "22";
 
 
 }
